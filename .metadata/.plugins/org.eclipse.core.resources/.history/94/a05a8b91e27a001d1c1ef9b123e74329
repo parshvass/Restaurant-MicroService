@@ -1,0 +1,9 @@
+package com.deloitte.service;
+
+import java.util.List;
+
+import com.deloitte.model.Food;
+
+public interface IOrdersService {
+	public List<Food> fetchOrders();
+}

@@ -1,0 +1,37 @@
+package com.deloitte.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.deloitte.entity.Food;
+import com.deloitte.repo.IFoodRepo;
+
+@Service
+public class FoodServiceImpl implements IFoodService {
+
+	@Autowired
+	private IFoodRepo foodRepo;
+	
+	@Override
+	public List<Food> fetchMenu() {
+		return foodRepo.findAll();
+	}
+
+	@Override
+	public List<Food> fetchJainMenu() {
+		return foodRepo.findAll(foodIsJain());
+	}
+
+	@Override
+	public List<Food> fetchFoodUnderX(Double foodPrice) {
+		return null;
+	}
+
+	@Override
+	public Food fetchFoodByID(String foodID) {
+		return foodRepo.findById(foodID).get();
+	}
+
+}

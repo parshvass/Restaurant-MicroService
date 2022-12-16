@@ -1,0 +1,9 @@
+package com.deloitte.service;
+
+import java.util.List;
+
+import com.deloitte.entity.FoodDish;
+
+public interface FoodService {
+	public List<FoodDish> fetchMenu();
+}

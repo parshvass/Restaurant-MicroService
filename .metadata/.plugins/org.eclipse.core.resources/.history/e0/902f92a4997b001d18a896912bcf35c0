@@ -1,0 +1,8 @@
+package com.deloitte.model;
+
+import com.deloitte.entity.Orders;
+
+public class Response {
+	private Orders obj;
+	private String msg;
+}

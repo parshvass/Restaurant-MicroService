@@ -1,0 +1,28 @@
+package com.deloitte.model;
+
+public class Response {
+	private String msg;
+	private Object obj;
+	public Response() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Response(String msg) {
+		super();
+		this.msg = msg;
+	}
+
+	public Response(Object obj) {
+		super();
+		this.obj = obj;
+	}
+
+	public Response(String msg, Object obj) {
+		super();
+		this.msg = msg;
+		this.obj = obj;
+	}
+	
+	
+}

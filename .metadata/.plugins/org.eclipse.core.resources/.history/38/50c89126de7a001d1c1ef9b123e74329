@@ -1,0 +1,19 @@
+package com.deloitte.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.deloitte.entity.Food;
+
+@Repository
+public interface IFoodRepo extends JpaRepository<Food, String> {
+	public List<Food> findByFoodIsJain(Boolean foodIsJain);
+//	@Query("select food from Food food where food.foodPrice < foodPrice")
+//	public List<Food> findFoodUnderX(@Param(value = "foodPrice") Double foodPrice);
+	@Query("select food from food where food_price < ?1")
+	public List<Food> findFoodUnderX(Double foodPrice);
+}

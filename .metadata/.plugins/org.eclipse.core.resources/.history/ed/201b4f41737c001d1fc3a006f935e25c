@@ -1,0 +1,20 @@
+package com.deloitte.service;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.deloitte.entity.Customer;
+import com.deloitte.model.Orders;
+import com.deloitte.model.Response;
+
+public interface ICustomerService {
+	public Customer getCustomerByID(Integer customersID);
+	public List<Customer> getAllCustomers();
+	public List<Customer> getAllCustomersInResatuarnt(Integer restaurantID);
+	public List<Orders> fetchByCustomersID(@PathVariable Integer customersID);
+	public List<Customer> fetchCustomersWithDues();
+	
+}

@@ -1,0 +1,18 @@
+package com.deloitte.service;
+
+import java.util.List;
+
+import com.deloitte.entity.Orders;
+import com.deloitte.model.Food;
+
+public interface IOrdersService {
+	public List<Orders> fetchOrders();
+	
+	public Integer fetchPrepTime();
+	
+	public Boolean orderIsPaid();
+	
+	public Double orderAmount();
+	
+	public Orders fetchOrderByID();
+}

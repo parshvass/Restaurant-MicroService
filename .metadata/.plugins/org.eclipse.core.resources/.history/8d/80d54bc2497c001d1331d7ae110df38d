@@ -1,0 +1,16 @@
+package com.deloitte.repo;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+
+@FeignClient(name = "order-ms")
+public interface IOrdersRest {
+
+
+
+	
+	
+	
+}

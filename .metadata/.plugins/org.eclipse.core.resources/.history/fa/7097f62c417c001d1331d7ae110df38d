@@ -1,0 +1,9 @@
+package com.deloitte.entity;
+
+public class Customer {
+	private Integer customerID;
+	private String customerName;
+	private String customerEmail;
+	private Long customerPhoneNO;
+	private Intger restaurantID;
+}

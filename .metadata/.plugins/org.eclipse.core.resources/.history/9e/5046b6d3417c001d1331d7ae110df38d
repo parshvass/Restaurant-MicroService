@@ -1,0 +1,8 @@
+package com.deloitte.service;
+
+import com.deloitte.entity.Customer;
+
+public interface ICustomerService {
+	public Customer getCustomerByID();
+	
+}

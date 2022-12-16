@@ -1,0 +1,11 @@
+package com.deloitte.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.deloitte.entity.Food;
+
+@Repository
+public interface IFoodRepo extends JpaRepository<Food, String>{
+	public List<Food> findByFoodIsJain(Boolean foodIsJain);
+}

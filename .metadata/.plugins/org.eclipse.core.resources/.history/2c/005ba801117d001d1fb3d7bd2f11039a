@@ -1,0 +1,16 @@
+package com.deloitte.model;
+
+import java.util.List;
+
+public class Response {
+	private String msg;
+	private Object obj;
+
+	public Response() {
+		super();
+	}
+
+	
+
+
+}

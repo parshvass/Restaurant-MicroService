@@ -1,0 +1,11 @@
+package com.deloitte.entity;
+
+import java.util.List;
+
+import com.deloitte.model.Food;
+
+public class Orders {
+
+	private List<Food> orderList;
+	private Double amountDue;
+}

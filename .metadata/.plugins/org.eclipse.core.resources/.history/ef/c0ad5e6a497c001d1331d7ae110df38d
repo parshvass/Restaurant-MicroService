@@ -1,0 +1,52 @@
+package com.deloitte.repo;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.deloitte.model.Orders;
+import com.deloitte.model.Response;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+@FeignClient(name = "order-ms")
+public interface IOrdersRest {
+	@GetMapping("/fetchAllOrders")
+	public List<Orders> fetchOrders();
+
+	@GetMapping("/fetchPrepTime/{ordersID}")
+	public ResponseEntity<?> fetchPrepTime(@PathVariable Integer ordersID);
+
+	@GetMapping("/orderIsPaid/{orderID}")
+	public Boolean orderIsPaid(@PathVariable Integer orderID);
+
+	@GetMapping("/orderAmount/{orderID}")
+	public Double orderAmount(@PathVariable Integer orderID);
+
+	@GetMapping("/fetchOrderByID/{orderID}")
+	public Orders fetchOrderByID(@PathVariable Integer orderID);
+	
+	@GetMapping("/fetchByCustomersID/{customersID}")
+	public List<Orders> fetchByCustomersID(@PathVariable Integer customersID) {
+		return ordersService.fetchOrderByCustomerID(customersID);
+	}
+
+	@GetMapping("/fetchCompleteOrderByID/{ordersID}")
+	@HystrixCommand(fallbackMethod = "fetchCompleteOrderByIDFallBack")
+	public ResponseEntity<?> fetchCompleteOrderByID(@PathVariable Integer ordersID) {
+		List<Food> completeOrder = restTemplate.getForObject(GET_ORDERED_FOOD + ordersID, List.class);
+		Response response = new Response(completeOrder);
+		return new ResponseEntity<Response>(response, HttpStatus.OK);
+	}
+
+	public ResponseEntity<?> fetchCompleteOrderByIDFallBack(@PathVariable Integer ordersID) {
+		Response response = new Response(ordersID, "Food-MS is unvailable at the moment");
+		return new ResponseEntity<Response>(response, HttpStatus.OK);
+	}
+	
+	
+	
+}

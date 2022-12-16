@@ -1,0 +1,9 @@
+package com.deloitte.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.deloitte.entity.FoodDish;
+
+public interface IFoodRepo extends JpaRepository<FoodDish, ID>{
+
+}
