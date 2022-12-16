@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "8e4e72ea-0651-4c80-a162-e1d208df3de6",
+		"name": "FoodMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FetchMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/food/fetchMenu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"food",
+						"fetchMenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchFoodByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/food/fetchFoodByID/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"food",
+						"fetchFoodByID",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchJainMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/food/fetchJainMenu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"food",
+						"fetchJainMenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchFoodUnderX",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/food/fetchFoodUnderX/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"food",
+						"fetchFoodUnderX",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchFoodByOrdersID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/food/fetchFoodByOrdersID/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"food",
+						"fetchFoodByOrdersID",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchOrdersPrepTime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/food/fetchOrdersPrepTime/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"food",
+						"fetchOrdersPrepTime",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

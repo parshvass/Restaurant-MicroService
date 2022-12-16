@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "c68cda7d-6950-46fa-95b0-9359a1224662",
+		"name": "CustomerMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllCustomers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/customers/getAllCustomers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"customers",
+						"getAllCustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/customers/getCustomerByID/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"customers",
+						"getCustomerByID",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrdersForCustomer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/customers/getAllOrdersForCustomer/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"customers",
+						"getAllOrdersForCustomer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCustomersInResatuarnt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/customers/getAllCustomersInResatuarnt/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"customers",
+						"getAllCustomersInResatuarnt",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

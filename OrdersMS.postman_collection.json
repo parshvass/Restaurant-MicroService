@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "2ee198ef-f600-4e63-9266-020ac36da69f",
+		"name": "OrdersMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fetchAllOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/fetchAllOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"fetchAllOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderIsPaid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/orderIsPaid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"orderIsPaid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderAmount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/orderAmount/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"orderAmount",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchOrderByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/fetchOrderByID/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"fetchOrderByID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchPrepTime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/fetchPrepTime/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"fetchPrepTime",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchByCustomersID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/fetchByCustomersID/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"fetchByCustomersID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchCompleteOrderByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/fetchCompleteOrderByID/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"fetchCompleteOrderByID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchCustomersWithDues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/orders/fetchCustomersWithDues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"orders",
+						"fetchCustomersWithDues"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
