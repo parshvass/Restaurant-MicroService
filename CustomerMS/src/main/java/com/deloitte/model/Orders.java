@@ -2,7 +2,7 @@ package com.deloitte.model;
 
 import java.sql.Date;
 
-public class Orders {
+public class Orders implements Comparable<Orders> {
 
 	private Integer orderedFoodID;
 	private Double ordersAmountDue;
@@ -79,6 +79,14 @@ public class Orders {
 		return "Orders [orderedFoodID=" + orderedFoodID + ", ordersAmountDue=" + ordersAmountDue + ", ordersIsPaid="
 				+ ordersIsPaid + ", orderPlacedOn=" + orderPlacedOn + ", orderID=" + orderID + ", customerID="
 				+ customerID + "]";
+	}
+
+	@Override
+	public int compareTo(Orders o) {
+		if ( getOrderPlacedOn()== null || o.getOrderPlacedOn() == null) {
+		      return 0;
+		    }
+		    return getOrderPlacedOn().compareTo(o.getOrderPlacedOn());
 	}
 	
 	

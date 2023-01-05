@@ -1,8 +1,0 @@
-package com.deloitte.entity;
-
-public class FoodDish {
-	private String foodName;
-	private String foodID;
-	private Double foodPrice;
-	private Boolean foodIsJain;
-}

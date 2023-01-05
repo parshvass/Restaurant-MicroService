@@ -4,14 +4,13 @@ import java.util.List;
 
 public class ListResponse {
 	private String msg;
-	private List objList;
+	private List<?> objList;
 	
 	public ListResponse() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public ListResponse(String msg, List objList) {
+	public ListResponse(String msg, List<?> objList) {
 		super();
 		this.msg = msg;
 		this.objList = objList;
@@ -22,7 +21,7 @@ public class ListResponse {
 		this.msg = msg;
 	}
 
-	public ListResponse(List objList) {
+	public ListResponse(List<?> objList) {
 		super();
 		this.objList = objList;
 	}
@@ -35,11 +34,11 @@ public class ListResponse {
 		this.msg = msg;
 	}
 
-	public List getObjList() {
+	public List<?> getObjList() {
 		return objList;
 	}
 
-	public void setObjList(List objList) {
+	public void setObjList(List<?> objList) {
 		this.objList = objList;
 	}
 

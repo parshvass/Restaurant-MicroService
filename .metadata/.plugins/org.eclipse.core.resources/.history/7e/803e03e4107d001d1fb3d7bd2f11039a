@@ -1,6 +1,0 @@
-package com.deloitte.model;
-
-public class ListResponse {
-	private String msg;
-	private List<Object> objectList;
-}

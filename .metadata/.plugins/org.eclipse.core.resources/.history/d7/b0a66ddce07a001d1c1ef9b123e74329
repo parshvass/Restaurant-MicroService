@@ -1,6 +1,0 @@
-package com.deloitte.entity;
-
-public class Orders {
-
-	private List<food> orderList;
-}

@@ -58,9 +58,7 @@ public class OrdersServiceImpl implements IOrdersService {
 		}
 		customersWithDue = customersWithDue.stream().distinct().toList();
 		System.out.println("customersWithDue"+customersWithDue);
-		return customersWithDue ;
-		
-		
+		return customersWithDue;
 	}
 
 }

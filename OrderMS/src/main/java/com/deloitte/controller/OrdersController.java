@@ -1,5 +1,6 @@
 package com.deloitte.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.deloitte.entity.Orders;
 import com.deloitte.model.Food;
-import com.deloitte.model.ListResponse;
 import com.deloitte.model.Response;
 import com.deloitte.service.OrdersServiceImpl;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -74,7 +74,15 @@ public class OrdersController {
 	@GetMapping("/fetchCompleteOrderByID/{ordersID}")
 	@HystrixCommand(fallbackMethod = "fetchCompleteOrderByIDFallBack")
 	public ResponseEntity<?> fetchCompleteOrderByID(@PathVariable Integer ordersID) {
+		System.out.println("\n\n\n*******************************************");
+		System.out.println("Printing list of food: ");
 		List<Food> completeOrder = restTemplate.getForObject(GET_ORDERED_FOOD + ordersID, List.class);
+		Iterator<Food> i = completeOrder.iterator();
+		while(i.hasNext()) {
+			System.out.println(i);
+			i.next();
+		}
+		System.out.println("class of i:"+i.getClass());
 		Response response = new Response(completeOrder);
 		return new ResponseEntity<Response>(response, HttpStatus.OK);
 	}
@@ -85,11 +93,16 @@ public class OrdersController {
 	}
 
 	@GetMapping("/fetchCustomersWithDues")
-	public ResponseEntity<ListResponse> fetchCustomersWithDues() {
-		System.out.println("Hellpo");
-		ListResponse response = new ListResponse(ordersService.getAllCustomersWithDues());
-		return new ResponseEntity<ListResponse>(response, HttpStatus.OK);
+	public ResponseEntity<List<Integer>> fetchCustomersWithDues() {
+		System.out.println("Hello");
+		return new ResponseEntity<List<Integer>>(ordersService.getAllCustomersWithDues(), HttpStatus.OK);
 	}
 	// fetch all foods for particular order
+
+	@GetMapping("/getCustomerRecentOrder/{customersID}")
+	public Orders getCustomerRecentOrder(@PathVariable Integer customersID) {
+		List<Orders> ordersList =  ordersService.fetchOrderByCustomerID(customersID);
+		return null;
+	}
 
 }

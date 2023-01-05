@@ -1,6 +1,7 @@
 package com.deloitte.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,6 @@ import com.deloitte.entity.Customer;
 import com.deloitte.model.Orders;
 import com.deloitte.model.Response;
 import com.deloitte.service.CustomerServiceImpl;
-
 
 @RequestMapping("/customers")
 @RestController
@@ -58,21 +58,23 @@ public class CustomerController {
 		System.out.println("123");
 		List<Integer> customersIDList = restTemplate.getForObject(GET_CUSTOMER_WITH_DUES, List.class);
 		System.out.println("customersIDList: "+customersIDList);
-//		List<Customer> customerList = new ArrayList<>();
-//		for(Integer i:customersIDList) {
-//			customerList.add(customerService.getCustomerByID(i));
-//		}
-//		System.out.println("customerList: "+customerList);
-
-		return new ResponseEntity<Response>(new Response("customers with dues"), HttpStatus.OK);
+		List<Customer> customerList = new ArrayList<>();
+		for(Integer i:customersIDList){
+			customerList.add(customerService.getCustomerByID(i));
+		}
+		
+		return new ResponseEntity<Response>(new Response("customers with dues",customerList), HttpStatus.OK);
 	}
 
-	@SuppressWarnings("unchecked")
 	@GetMapping("/getCustomerRecentOrder/{customersID}")
-	public ResponseEntity<Response> getCustomerRecentOrder(@PathVariable Integer customersID) {
+	public ResponseEntity<Orders> getCustomerRecentOrder(@PathVariable Integer customersID) {
+		@SuppressWarnings("unchecked")
 		List<Orders> ordersList= restTemplate.getForObject(GET_ORDERS_FOR_CUSTOMER_ID+customersID, List.class);
-		ordersList.sort((o1, o2) -> o1.getOrderPlacedOn().compareTo(o2.getOrderPlacedOn()));
+//		ordersList.sort((o1, o2) -> o1.getOrderPlacedOn().compareTo(o2.getOrderPlacedOn()));
 		System.out.println("ordersList: "+ordersList);
-		return new ResponseEntity<Response>(new Response(), HttpStatus.OK);
+		Collections.sort(ordersList);
+		System.out.println("Sorted ordersList: "+ordersList);
+		Orders order = new Orders();
+		return new ResponseEntity<Orders>(order, HttpStatus.OK);
 	}
 }

@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="OrdersList"/>
+		<item key="selection" value="GET_ORDERED_FOOD"/>
 		<list key="findhistory">
+			<item value="GET_ORDERED_FOOD"/>
+			<item value="arraylist "/>
 			<item value="ordersList"/>
 		</list>
 		<list key="replacehistory">

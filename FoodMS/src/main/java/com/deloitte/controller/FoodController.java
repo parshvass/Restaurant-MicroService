@@ -1,5 +1,6 @@
 package com.deloitte.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,11 @@ public class FoodController {
 	public List<Food> fetchFoodByOrdersID(@PathVariable Integer ordersID){
 		return foodService.fetchFoodByOrdersID(ordersID);
 	}
+	
+//	@GetMapping("/fetchFoodByOrdersID/{ordersID}")
+//	public Food[] fetchFoodByOrdersID(@PathVariable Integer ordersID){
+//		return (Food[]) foodService.fetchFoodByOrdersID(ordersID).toArray();
+//	}
 	
 	@GetMapping("/fetchOrdersPrepTime/{ordersID}")
 	public Integer fetchOrdersPrepTime(@PathVariable Integer ordersID){

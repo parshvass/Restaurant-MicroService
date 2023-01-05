@@ -1,9 +1,0 @@
-package com.deloitte.repo;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.deloitte.entity.Customer;
-
-public interface ICustomerRepo extends JpaRepository<Customer, Integer> {
-
-}
